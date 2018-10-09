@@ -9,7 +9,7 @@ function getToken(method,url,htmltag)
 	{
 		if (xhr.readyState == 4 && xhr.status == 200)
 		 {
-            console.log("CSRF Token Successfully Received "+ this.responseText);
+            console.log("CSRF Token Successfully Received. Token : "+ this.responseText);
             document.getElementById(htmltag).value = xhr.responseText;
 		 }
 	};
