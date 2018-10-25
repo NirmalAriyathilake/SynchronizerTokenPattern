@@ -1,15 +1,16 @@
 <?php
 	session_start();
-	session_destroy();
-	unset($_SESSION['username']);
-	$_SESSION['message'] = "You are successfully Logged out";
-	header("Location: login.php");	
+    session_destroy();
+    $cookieName = "sessionCookie"; 
+    unset($_COOKIE[$cookieName]);
+    setcookie($cookieName, null, -1, '/');
 ?>
 
 <html>
 <body>
 <script>
 	alert("You are Successfully Logged out!");
+    window.location.href = "index.php";
 </script>
 </body>
 </html>
