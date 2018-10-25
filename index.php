@@ -69,7 +69,7 @@
 
 						<input type="hidden" id="token_csrf" name="token_csrf" >
 
-						<input type="submit" name="submit" value="Login"  class="btn btn-success" oncli/>
+						<input type="submit" name="submit" value="Login"  class="btn btn-success"/>
 					</form>
 				</div>
 			</div>
