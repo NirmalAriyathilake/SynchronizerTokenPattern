@@ -17,7 +17,7 @@
 			{
 				if (xmlrequest.readyState == 4 && xmlrequest.status == 200)
 				{
-					// console.log("CSRF Token Received. Token : "+ this.responseText);
+					console.log("CSRF Token Received. Token : "+ this.responseText);
 					document.getElementById(htmltag).value = this.responseText;
 				}
 			};

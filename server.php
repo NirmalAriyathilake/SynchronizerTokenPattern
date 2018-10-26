@@ -1,15 +1,16 @@
 <?php
     session_start();
 
-
     if(isset($_POST['sessionid'])){
+        ob_end_clean(); // buffer clean
+
+        // echo $_SESSION[$_POST['sessionid']];
         generateToken($_POST['sessionid']);
     }
-
     if(isset($_POST['submit'])){
         ob_end_clean(); // buffer clean
 
-        validate($_POST['username'],$_POST['password'],$_POST['token_csrf'],$_COOKIE['sessionCookie']);
+        validate($_POST['username'],$_POST['password']);
     }
 
     if(isset($_POST['addcommentsubmit'])){
@@ -34,7 +35,7 @@
     }
 
     //validate cookie
-    function validate($username,$password,$token,$cookie){
+    function validate($username,$password){
         /**
          * For demo ,
          * Username : user
@@ -42,14 +43,13 @@
          */
 
         if($username == "user" && $password == "user"){
-            if($token == $_SESSION[$cookie] && $cookie==session_id()){
+            $cookieName = "sessionCookie"; 
             
-                echo "<script> alert('Successfully Logged In') </script>";
-                echo "<script type=\"text/javascript\"> window.location.href = 'client.php';</script>";
-            }else{
-                echo "<script> alert('Login failed! CSRF token not matched !!!') </script>";
-                echo "<script type=\"text/javascript\"> window.location.href = 'index.php';</script>";
-            }
+            generateToken($_COOKIE[$cookieName]);
+            
+            echo "<script> alert('Successfully Logged In') </script>";
+            echo "<script type=\"text/javascript\"> window.location.href = 'client.php';</script>";
+        
         }else{
             echo "<script> alert('Login failed! Check username and password again !!!') </script>";
             echo "<script type=\"text/javascript\"> window.location.href = 'index.php';</script>";
