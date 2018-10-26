@@ -29,7 +29,7 @@
 			<div class="row justify-content-center">
 
 				<div class="col-md-9">
-					<form method="post" action="server.php" name="lginform">
+					<form method="post" action="server.php" name="loginform">
 						Username:<br/>
 						<input type="text" name="username" class="form-control" placeholder="Username" required><br/>
 						Password:<br/>
