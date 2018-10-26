@@ -13,10 +13,10 @@
         validate($_POST['username'],$_POST['password']);
     }
 
-    if(isset($_POST['addcommentsubmit'])){
+    if(isset($_POST['addstatussubmit'])){
         ob_end_clean(); // buffer clean
 
-        validateComment($_POST['token_csrf'],$_COOKIE['sessionCookie']);
+        validateStatus($_POST['token_csrf'],$_COOKIE['sessionCookie']);
     }
 
     //generate csrf token
@@ -56,8 +56,8 @@
         }
     }
 
-    //validate comment
-    function validateComment($token,$cookie){
+    //validate status
+    function validateStatus($token,$cookie){
         if($token == $_SESSION[$cookie] && $cookie==session_id()){
             echo "<script> alert('Status successfully added') </script>";
             echo "<script type=\"text/javascript\"> window.location.href = 'client.php';</script>";
