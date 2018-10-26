@@ -31,9 +31,9 @@
 				<div class="col-md-9">
 					<form method="post" action="server.php" name="lginform">
 						Username:<br/>
-						<input type="text" name="username" class="form-control" placeholder="Username"><br/>
+						<input type="text" name="username" class="form-control" placeholder="Username" required><br/>
 						Password:<br/>
-						<input type="password" name="password"class="form-control" placeholder="Password"><br/>
+						<input type="password" name="password"class="form-control" placeholder="Password" required><br/>
 
 						<input type="submit" name="submit" value="Login"  class="btn btn-success"/>
 					</form>

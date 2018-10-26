@@ -42,7 +42,7 @@
                 <div class="col-md-9">
                     <form method="post" action="server.php">
                         Status:<br/>
-                        <input type="text" name="status" class="form-control" placeholder="Status"><br/>
+                        <input type="text" name="status" class="form-control" placeholder="Status" required><br/>
 
                         <input type="hidden" name="token_csrf" id="token_csrf">
                         <input type="submit" name="addcommentsubmit" value="Add Status" class="btn btn-success"/>
