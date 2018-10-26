@@ -4,9 +4,9 @@
     if(isset($_POST['sessionid'])){
         ob_end_clean(); // buffer clean
 
-        // echo $_SESSION[$_POST['sessionid']];
         generateToken($_POST['sessionid']);
     }
+    
     if(isset($_POST['submit'])){
         ob_end_clean(); // buffer clean
 
